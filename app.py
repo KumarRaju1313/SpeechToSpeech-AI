@@ -12,12 +12,11 @@ if hugging_face_token_id:
 else:
     st.error("Hugging Face token is not set. Please set it in the Streamlit Cloud secrets.")
 
-# Load smaller models
 whisper_processor = WhisperProcessor.from_pretrained("openai/whisper-base")
 whisper_model = WhisperForConditionalGeneration.from_pretrained("openai/whisper-base")
 
-llama_tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-3b-chat-hf")  # Using a smaller model
-llama_model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-2-3b-chat-hf")  # Using a smaller model
+llama_tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-3b-chat-hf") 
+llama_model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-2-3b-chat-hf") 
 
 tts_engine = pyttsx3.init()
 recognizer = sr.Recognizer()
