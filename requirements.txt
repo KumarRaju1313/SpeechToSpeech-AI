@@ -1,7 +1,9 @@
 streamlit
+python-dotenv
 speechrecognition
 pyttsx3
-opencv-python
 torch
 transformers
-huggingface-hub
+huggingface_hub
+opencv-python
+
