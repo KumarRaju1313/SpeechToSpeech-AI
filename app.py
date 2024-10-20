@@ -1,20 +1,18 @@
 import streamlit as st
-import os
-from dotenv import load_dotenv
 import speech_recognition as sr
 import pyttsx3
-import torch
 from huggingface_hub import login
 from transformers import WhisperProcessor, WhisperForConditionalGeneration, AutoTokenizer, AutoModelForCausalLM
 
-load_dotenv()
-
-hugging_face_token_id = os.getenv('HUGGING_FACE_TOKEN')
+# Access Hugging Face token from Streamlit secrets
+hugging_face_token_id = st.secrets.get('HUGGING_FACE_TOKEN')
 
 if hugging_face_token_id:
     login(hugging_face_token_id)
 else:
-    st.error("Hugging Face token is not set. Please set it in the .env file or as a secret in the Streamlit Cloud.")
+    st.error("Hugging Face token is not set. Please set it in the Streamlit Cloud secrets.")
+
+# Load models
 whisper_processor = WhisperProcessor.from_pretrained("openai/whisper-base")
 whisper_model = WhisperForConditionalGeneration.from_pretrained("openai/whisper-base")
 
