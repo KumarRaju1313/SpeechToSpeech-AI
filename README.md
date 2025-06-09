@@ -33,11 +33,12 @@ This makes it feel like you’re talking to an actual assistant.
 
 ## ⚙️ How to set it up
 
-> ⚠️ This project needs to be run **locally**, not in Google Colab — because Colab doesn't support microphones or webcams properly.
+> ⚠️ This project needs to be run **locally**, not in Google Colab — because Colab doesn't support microphones or webcams properly.But text can work in that. 
+      But the project is in process. Not yet fully Optimized.
 
 ### 🔧 Install dependencies
 
-You can copy-paste these into your terminal (Ubuntu/Debian):
+You can copy-paste these into your terminal:
 
 ```bash
 pip install SpeechRecognition
