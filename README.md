@@ -1,44 +1,45 @@
 # 🎤 Speech-to-Speech LLM Bot
 
-This is a voice-based chatbot project where users can talk to a bot, and it talks back! It listens to your voice using your microphone or webcam, understands your message using a powerful language model, and responds out loud — all in real time.
-
-This project combines **speech recognition**, **natural language processing**, and **text-to-speech** in a single pipeline using state-of-the-art models like **Whisper** and **LLaMA 2**.
+A real-time voice-based chatbot that listens to your voice, understands your question using **LLaMA 2**, and talks back using **text-to-speech** — creating an interactive assistant experience.
 
 ---
 
-## 🔍 What this project does
+## 🔍 What This Project Does
 
-- Takes input from the **microphone**, **webcam (audio)**, or **manual text**
-- Converts your voice into text using **Whisper**
-- Uses **LLaMA 2** to generate a smart and relevant reply
-- Converts that reply into voice using **pyttsx3**
-- Plays the response back to you like a real conversation
-
-This makes it feel like you’re talking to an actual assistant.
-
----
-
-## 🧠 Technologies used
-
-| Function              | Tool/Library                      |
-|-----------------------|-----------------------------------|
-| Speech Recognition    | OpenAI Whisper                    |
-| Natural Language Model| Meta LLaMA 2                      |
-| Text-to-Speech        | pyttsx3                           |
-| Interface             | Python CLI (Command Line)         |
-| Audio Input Handling  | SpeechRecognition, OpenCV         |
-| Model Hosting         | Hugging Face                      |
+- 🎙️ Takes input from:
+  - Microphone
+  - Webcam (audio)
+  - OR Manual text
+- 🎧 Converts voice to text using **OpenAI Whisper**
+- 🧠 Understands your message using **Meta LLaMA 2** (via Hugging Face Transformers)
+- 🗣️ Speaks the response using **pyttsx3** (text-to-speech)
+- 🪄 Feels like you’re talking to a smart assistant!
 
 ---
 
-## ⚙️ How to set it up
+## 🧠 Technologies Used
 
-> ⚠️ This project needs to be run **locally**, not in Google Colab — because Colab doesn't support microphones or webcams properly.But text can work in that. 
-      But the project is in process. Not yet fully Optimized.
+| Function               | Tool/Library                |
+|------------------------|-----------------------------|
+| Speech Recognition     | `SpeechRecognition`, `Whisper` |
+| Natural Language Model | `LLaMA 2` via `transformers` |
+| Text-to-Speech         | `pyttsx3`                   |
+| Audio Input Handling   | `OpenCV`, `pyaudio`         |
+| Model Hosting          | `Hugging Face`              |
+| Interface              | Python CLI                  |
 
-### 🔧 Install dependencies
+---
 
-You can copy-paste these into your terminal:
+## ⚙️ How to Set It Up
+
+> ⚠️ This project must be run **locally** — microphones and webcams are not supported in Google Colab. However, **text mode** will still work there.  
+> ℹ️ *This is a work in progress and not yet fully optimized.*
+
+---
+
+### 🔧 Install Dependencies
+
+Copy and paste this into your terminal:
 
 ```bash
 pip install SpeechRecognition
@@ -49,6 +50,7 @@ pip install transformers
 pip install huggingface_hub
 pip install pyttsx3
 
+# OS-specific dependencies (for TTS and mic access)
 sudo apt install espeak
 sudo apt-get install portaudio19-dev
 pip install pyaudio
